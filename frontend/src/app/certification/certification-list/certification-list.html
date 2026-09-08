@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Certification Management</h2>
+  <div *ngFor="let cert of certifications" class="certification-card">
+    <h3>{{ cert.certificationName }}</h3>
+    <p>Employee: {{ cert.employee?.name }}</p>
+    <p>Issuer: {{ cert.issuingOrganization }}</p>
+    <p>Issued: {{ cert.issueDate }}</p>
+    <p>Expiry: {{ cert.expiryDate }}</p>
+    <p>Status: <strong>{{ cert.status }}</strong></p>
+  </div>
+</div>

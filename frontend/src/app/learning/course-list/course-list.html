@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Courses & Learning Paths</h2>
+  <div *ngFor="let course of courses" class="course-card">
+    <h3>{{ course.title }}</h3>
+    <p>{{ course.description }}</p>
+    <p>Duration: {{ course.duration }} hours</p>
+    <p>Type: {{ course.type }}</p>
+    <p>Instructor: {{ course.instructor }}</p>
+    <p>Rating: {{ course.rating }}</p>
+    <button (click)="enroll(course.courseId)">Enroll</button>
+  </div>
+</div>

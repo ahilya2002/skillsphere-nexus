@@ -1,0 +1,9 @@
+package com.skillsphere.nexus.repository;
+
+import com.skillsphere.nexus.entity.Skill;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.UUID;
+
+public interface SkillRepository extends JpaRepository<Skill, UUID> {
+
+}
