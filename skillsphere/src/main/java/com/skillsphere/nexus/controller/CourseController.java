@@ -1,5 +1,6 @@
 package com.skillsphere.nexus.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import com.skillsphere.nexus.dto.CourseDTO;
 import com.skillsphere.nexus.service.CourseService;
 import lombok.RequiredArgsConstructor;
@@ -26,11 +27,13 @@ public class CourseController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('ADMIN','TRAINING_MANAGER')")
     public CourseDTO createCourse(@RequestBody CourseDTO dto) {
         return courseService.createCourse(dto);
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN','TRAINING_MANAGER')")
     public void deleteCourse(@PathVariable UUID id) {
         courseService.deleteCourse(id);
     }

@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: nexus-route
+              uri: http://localhost:8082
+              predicates:
+                - Path=/nexus/**
+              filters:
+                - StripPrefix=1
+            - id: career-route
+              uri: http://localhost:8083
+              predicates:
+                - Path=/career/**
+              filters:
+                - StripPrefix=1
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/skillsphere

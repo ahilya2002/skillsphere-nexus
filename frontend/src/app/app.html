@@ -1,2 +1,55 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">S</span>
+      <div>
+        <div class="brand-name">SkillSphere</div>
+        <div class="brand-sub">NEXUS</div>
+      </div>
+    </div>
 
-<router-outlet />
+    <div class="nav-section-label">MAIN</div>
+    <nav class="nav-links">
+      <a class="nav-item disabled">Dashboard <span class="soon">soon</span></a>
+      <a class="nav-item disabled">Skills <span class="soon">soon</span></a>
+      <a routerLink="/courses" routerLinkActive="active" class="nav-item">Learning</a>
+      <a routerLink="/certifications" routerLinkActive="active" class="nav-item">Certifications</a>
+      @if (isHrOrAdmin) {
+        <a routerLink="/certifications/expiring" routerLinkActive="active" class="nav-item">Expiring Certs</a>
+      }
+      <a routerLink="/career" routerLinkActive="active" class="nav-item">Career</a>
+      <a routerLink="/jobs" routerLinkActive="active" class="nav-item">Jobs</a>
+      @if (isHrOrAdmin) {
+        <a class="nav-item disabled">Employees <span class="soon">soon</span></a>
+      }
+      <a routerLink="/analytics" routerLinkActive="active" class="nav-item">Analytics</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span class="status-dot"></span> All systems operational
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+  <div class="breadcrumb">SkillSphere Nexus</div>
+  <div class="user-chip">
+    {{ auth.getUsername() }}
+
+    <select class="role-switch" (change)="switchRole($any($event.target).value)">
+      <option value="" disabled selected>Switch role</option>
+      <option value="test.employee">Employee</option>
+      <option value="hr_manager">HR Manager</option>
+      <option value="admin_user">Admin</option>
+      <option value="training_manager">Training Manager</option>
+    </select>
+
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</header>
+
+    <main class="content">
+      <router-outlet />
+    </main>
+  </div>
+</div>

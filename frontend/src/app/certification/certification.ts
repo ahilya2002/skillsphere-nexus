@@ -5,8 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class Certification {
-  private baseUrl = 'http://localhost:8082/api/certifications';
-
+private baseUrl = 'http://localhost:8080/nexus/api/certifications';
   constructor(private http: HttpClient) {}
 
   getAll() {
