@@ -1,0 +1,27 @@
+<h1>Employees</h1>
+<p class="subtitle">Organization employee directory</p>
+
+<table class="emp-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Designation</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (emp of employees; track emp.employeeId) {
+      <tr>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.designation }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@if (employees.length === 0) {
+  <p>No employees found.</p>
+}
