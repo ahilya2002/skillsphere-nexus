@@ -10,9 +10,8 @@
 
     <div class="nav-section-label">MAIN</div>
     <nav class="nav-links">
-      <a class="nav-item disabled">Dashboard <span class="soon">soon</span></a>
-      <a class="nav-item disabled">Skills <span class="soon">soon</span></a>
-      <a routerLink="/courses" routerLinkActive="active" class="nav-item">Learning</a>
+     <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">Dashboard</a>
+<a routerLink="/skills" routerLinkActive="active" class="nav-item">Skills</a>      <a routerLink="/courses" routerLinkActive="active" class="nav-item">Learning</a>
       <a routerLink="/certifications" routerLinkActive="active" class="nav-item">Certifications</a>
       @if (isHrOrAdmin) {
         <a routerLink="/certifications/expiring" routerLinkActive="active" class="nav-item">Expiring Certs</a>

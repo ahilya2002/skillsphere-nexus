@@ -5,13 +5,17 @@ import { ExpiringCertifications } from './certification/expiring-certifications/
 import { CareerComponent } from './pages/career/career';
 import { JobsComponent } from './pages/jobs/jobs';
 import { AnalyticsComponent } from './pages/analytics/analytics';
+import { DashboardComponent } from './pages/dashboard/dashboard';
+import { SkillsComponent } from './pages/skills/skills';
 
 export const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'courses', component: CourseList },
   { path: 'certifications', component: CertificationList },
   { path: 'certifications/expiring', component: ExpiringCertifications },
   { path: 'career', component: CareerComponent },
   { path: 'jobs', component: JobsComponent },
   { path: 'analytics', component: AnalyticsComponent },
-  { path: '', redirectTo: 'courses', pathMatch: 'full' }
+  { path: 'skills', component: SkillsComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];
